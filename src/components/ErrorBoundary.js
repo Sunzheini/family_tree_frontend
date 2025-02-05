@@ -23,7 +23,7 @@ export default class ErrorBoundary extends Component {
         if (this.state.hasError) {
             return <h1>404 {
                 this.props.location.pathname
-            } not found. Contact Admin.
+            } not found. Contact Administrator.
             </h1>;
         }
 
