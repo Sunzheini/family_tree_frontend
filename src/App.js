@@ -51,6 +51,17 @@ function Sample() {
 }
 
 
+function Sample2() {
+    return (
+        <>
+            <div className="Sample">
+                <h1>Hello World 2</h1>
+            </div>
+        </>
+    );
+}
+
+
 function App() {
     return (
         <>
@@ -71,6 +82,7 @@ function App() {
                 </header>
                 <div>
                     <Sample/>
+                    <Sample2/>
                 </div>
             </div>
         </>
