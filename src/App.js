@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import {useState} from "react";
 
 
 /*
@@ -62,7 +63,26 @@ function Sample2() {
 }
 
 
+function Popup({onClose}) {
+    return (
+        <div className="popup-overlay">
+            <div className="popup">
+                <h2>Custom Popup</h2>
+                <p>This is a custom popup window.</p>
+                <button onClick={onClose}>Close</button>
+            </div>
+        </div>
+    );
+}
+
+
 function App() {
+    const [isPopupVisible, setPopupVisible] = useState(false);
+
+    function ShowPopupWindow() {
+        setPopupVisible(true);
+    }
+
     return (
         <>
             <div className="App">
@@ -80,10 +100,21 @@ function App() {
                         Learn React
                     </a>
                 </header>
+
+                <div>
+                    <button
+                        className="btn"
+                        onClick={() => ShowPopupWindow()}>
+                        Click Me
+                    </button>
+                </div>
+
                 <div>
                     <Sample/>
                     <Sample2/>
                 </div>
+
+                {isPopupVisible && <Popup onClose={() => setPopupVisible(false)} />}
             </div>
         </>
     );
