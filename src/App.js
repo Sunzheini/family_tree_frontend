@@ -76,6 +76,11 @@ function Popup({onClose}) {
 }
 
 
+function sampleFunction() {
+    return 1 + 2;
+}
+
+
 function App() {
     const [isPopupVisible, setPopupVisible] = useState(false);
 
